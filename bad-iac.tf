@@ -8,6 +8,19 @@ resource "aws_s3_bucket" "data" {
   force_destroy = true
 }
 
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "data" {
+  bucket = aws_s3_bucket.data.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "AES256"
+    }
+  }
+}
+
+
+
 resource "aws_security_group" "web-node" {
   # security group is open to the world in SSH port
   name        = "bad-sg"
