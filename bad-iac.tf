@@ -10,7 +10,7 @@ resource "aws_s3_bucket" "data" {
 
 
 resource "aws_s3_bucket" "data_log_bucket" {
-  bucket = "data-log-bucket"
+  bucket = "bad-s3-data-log-bucket"
 }
 
 resource "aws_s3_bucket_logging" "data" {
