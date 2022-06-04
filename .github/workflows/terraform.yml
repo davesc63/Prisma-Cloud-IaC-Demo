@@ -50,8 +50,7 @@ on:
   pull_request:
     branches: [ main, iac-demo ]
 
-permissions:
-  contents: read
+permissions: write-all
 
 jobs:
   terraform:
