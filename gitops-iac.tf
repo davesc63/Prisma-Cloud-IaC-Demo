@@ -3,7 +3,7 @@ resource "aws_s3_bucket" "data" {
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "gitops-demo-s3-bucket-data-v2"
+  bucket        = "gitops-demo-s3-bucket-data-v2-review"
   acl           = "private"
   force_destroy = true
 }
