@@ -105,7 +105,6 @@ jobs:
       env:
         PLAN: "terraform\n${{ steps.plan.outputs.stdout }}"
       with:
-        permissions: write-all
         github-token: ${{ secrets.GITHUB_TOKEN }}
         script: |
           const output = `#### Dave Terraform Format and Style 🖌\`${{ steps.fmt.outcome }}\`
