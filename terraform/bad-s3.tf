@@ -11,6 +11,6 @@ resource "aws_s3_bucket" "data" {
     Environment = local.resource_prefix.value
     }, {
     git_org  = "davesc63"
-    git_repo = "Prisma-Cloud-IaC-Demo"
+    git_repo = "Prisma-Cloud-IaC-Demo1"
   })
 }

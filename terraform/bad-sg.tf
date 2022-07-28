@@ -25,7 +25,7 @@ resource "aws_security_group" "web-node" {
     cidr_blocks = [
     "0.0.0.0/0"]
   }
-   tags = {
+  tags = {
     git_org  = "davesc63"
     git_repo = "Prisma-Cloud-IaC-Demo"
   }
