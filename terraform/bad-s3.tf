@@ -12,6 +12,7 @@ resource "aws_s3_bucket" "data" {
     }, {
     git_org  = "davesc63"
     git_repo = "Prisma-Cloud-IaC-Demo-update"
+    customer = "Customer-Name-Here"
   })
 }
 
