@@ -27,7 +27,7 @@ jobs:
 
       - name: Run Bridgecrew - Prisma Cloud
         if: github.event_name == 'pull_request'
-        id: Bridgecrew-Prisma Cloud
+        id: Bridgecrew
         uses: bridgecrewio/bridgecrew-action@master 
         env:
           PRISMA_API_URL: https://api.prismacloud.io
