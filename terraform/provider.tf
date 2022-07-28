@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket = "gov-terraform"
-    key    = "tfstate"
+    key    = "tfstate-prisma-iac-demo"
     region = "ap-southeast-2"
   }
 }
