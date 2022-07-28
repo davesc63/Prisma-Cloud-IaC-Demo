@@ -11,6 +11,16 @@ resource "aws_s3_bucket" "data" {
     Environment = local.resource_prefix.value
     }, {
     git_org  = "davesc63"
-    git_repo = "Prisma-Cloud-IaC-Demo"
+    git_repo = "Prisma-Cloud-IaC-Demo-update"
   })
+}
+
+resource "aws_s3_bucket_server_side_encryption_configuration" "data" {
+  bucket = aws_s3_bucket.data.bucket
+
+  rule {
+    apply_server_side_encryption_by_default {
+      sse_algorithm     = "AES256"
+    }
+  }
 }
