@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Bridgecrew Prisma Cloud
+name: Bridgecrew - Prisma Cloud
 
 # Controls when the workflow will run
 on:
@@ -25,9 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
 
-      - name: Run Bridgecrew // Prisma Cloud
+      - name: Run Bridgecrew - Prisma Cloud
         if: github.event_name == 'pull_request'
-        id: Bridgecrew  Prisma Cloud
+        id: Bridgecrew-Prisma Cloud
         uses: bridgecrewio/bridgecrew-action@master 
         env:
           PRISMA_API_URL: https://api.prismacloud.io
