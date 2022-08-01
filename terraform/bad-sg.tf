@@ -35,6 +35,6 @@ resource "aws_security_group" "web-node" {
   tags = {
     git_org  = "davesc63"
     git_repo = "Prisma-Cloud-IaC-Demo"
-    customer = "Customer-Name-Here"
+    customer = "Demo-Customer-Name-Here"
   }
 }
