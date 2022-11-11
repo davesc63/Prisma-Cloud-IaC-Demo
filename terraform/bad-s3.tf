@@ -17,3 +17,15 @@ resource "aws_s3_bucket" "data" {
     yor_trace = "28cabed6-3d82-40c6-b2be-7323c0a7c8d5"
   })
 }
+
+
+resource "aws_s3_bucket" "data_log_bucket" {
+  bucket = "data-log-bucket"
+}
+
+resource "aws_s3_bucket_logging" "data" {
+  bucket = aws_s3_bucket.data.id
+
+  target_bucket = aws_s3_bucket.data_log_bucket.id
+  target_prefix = "log/"
+}
