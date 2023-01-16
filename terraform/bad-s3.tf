@@ -112,3 +112,22 @@ resource "aws_s3_bucket" "demo" {
     yor_trace = ""
   })
 }
+resource "aws_s3_bucket" "genie" {
+  # bucket is public
+  # bucket is not encrypted
+  # bucket does not have access logs
+  # bucket does not have versioning
+  bucket        = "${local.resource_prefix.value}-genie-demo-bucket1"
+  acl           = "public-read"
+  force_destroy = true
+  tags = merge({
+    Name        = "${local.resource_prefix.value}-genie"
+    Environment = local.resource_prefix.value
+    }, {
+    git_org  = "davesc63"
+    git_repo = "Prisma-Cloud-IaC-Demo"
+    customer = "genie"
+    }, {
+    yor_trace = ""
+  })
+}
