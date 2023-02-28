@@ -39,9 +39,12 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-data"
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
 
   ### TODO - Custom Upload of insecure document
-
   FinancialsBucket:
     # not encrypted, no access logs, no versioning
     Type: AWS::S3::Bucket
@@ -52,3 +55,7 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-financials"
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63

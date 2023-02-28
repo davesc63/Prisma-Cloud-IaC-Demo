@@ -17,5 +17,7 @@ resource "aws_ecs_task_definition" "service" {
   ])
   tags = {
     yor_trace = "522dc9a4-4747-48f5-9bdb-7b94b4c5d3bf"
+    git_org   = "davesc63"
+    git_repo  = "Prisma-Cloud-IaC-Demo"
   }
 }

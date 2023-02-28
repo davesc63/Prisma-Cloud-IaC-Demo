@@ -56,6 +56,11 @@ Resources:
       ManagedPolicyArns:
         - arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
         - arn:aws:iam::aws:policy/AmazonEKSServicePolicy
+      Tags:
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   VPC:
     Type: AWS::EC2::VPC
     Properties:
@@ -65,12 +70,20 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub '${AWS::StackName}-VPC'
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   InternetGateway:
     Type: "AWS::EC2::InternetGateway"
     Properties:
       Tags:
         - Key: Name
           Value: !Sub '${AWS::StackName}-Internet Gateway'
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   VPCGatewayAttachment:
     Type: "AWS::EC2::VPCGatewayAttachment"
     Properties:
@@ -85,6 +98,10 @@ Resources:
           Value: Public Subnets
         - Key: Network
           Value: Public
+        - Key: git_org
+          Value: davesc63
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
   PrivateRouteTable01:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -94,6 +111,10 @@ Resources:
           Value: Private Subnet AZ1
         - Key: Network
           Value: Private01
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   PrivateRouteTable02:
     Type: AWS::EC2::RouteTable
     Properties:
@@ -103,6 +124,10 @@ Resources:
           Value: Private Subnet AZ2
         - Key: Network
           Value: Private02
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   PublicRoute:
     DependsOn:
     - VPCGatewayAttachment
@@ -141,6 +166,10 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub '${AWS::StackName}-NatGatewayAZ1'
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   NatGateway02:
     DependsOn:
     - NatGatewayEIP2
@@ -153,18 +182,32 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub '${AWS::StackName}-NatGatewayAZ2'
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   NatGatewayEIP1:
     DependsOn:
     - VPCGatewayAttachment
     Type: 'AWS::EC2::EIP'
     Properties:
       Domain: vpc
+      Tags:
+        - Key: git_org
+          Value: davesc63
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
   NatGatewayEIP2:
     DependsOn:
     - VPCGatewayAttachment
     Type: 'AWS::EC2::EIP'
     Properties:
       Domain: vpc
+      Tags:
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   PublicSubnet01:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -182,6 +225,10 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${AWS::StackName}-PublicSubnet01"
+        - Key: git_org
+          Value: davesc63
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
   PublicSubnet02:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -199,6 +246,10 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${AWS::StackName}-PublicSubnet02"
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   PrivateSubnet01:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -218,6 +269,10 @@ Resources:
           Value: !Sub "${AWS::StackName}-PrivateSubnet01"
         - Key: "kubernetes.io/role/internal-elb"
           Value: "1"
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   PrivateSubnet02:
     Type: AWS::EC2::Subnet
     Metadata:
@@ -237,6 +292,10 @@ Resources:
           Value: !Sub "${AWS::StackName}-PrivateSubnet02"
         - Key: "kubernetes.io/role/internal-elb"
           Value: "1"
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   PublicSubnet01RouteTableAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
     Properties:
@@ -262,6 +321,11 @@ Resources:
     Properties:
       GroupDescription: Cluster communication with worker nodes
       VpcId: !Ref VPC
+      Tags:
+        - Key: git_repo
+          Value: Prisma-Cloud-IaC-Demo
+        - Key: git_org
+          Value: davesc63
   EKSCluster:
     Type: AWS::EKS::Cluster
     Properties:
