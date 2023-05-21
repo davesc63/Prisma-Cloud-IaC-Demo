@@ -55,35 +55,35 @@ resource "aws_s3_bucket" "financials" {
 #     #yor_trace = "28cabed6-3d82-40c6-b2be-7323c0a7c8d5"
 #   })
 ## }
-resource "aws_s3_bucket" "bhp" {
+resource "aws_s3_bucket" "demo" {
   # bucket is public
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "${local.resource_prefix.value}-AWS-bucket"
+  bucket        = "${local.resource_prefix.value}-perth-bucket"
   acl           = "public-read"
   force_destroy = true
   tags = merge({
-    Name        = "${local.resource_prefix.value}-bhp"
+    Name        = "${local.resource_prefix.value}-perth"
     Environment = local.resource_prefix.value
     }, {
     git_org  = "davesc63"
     git_repo = "Prisma-Cloud-IaC-Demo"
-    customer = "AWS-IaC-Demo"
+    customer = "perth-IaC-Demo"
     }, {
     yor_trace = ""
   })
 }
-resource "aws_s3_bucket" "awsdemo" {
+resource "aws_s3_bucket" "perthdemo" {
   # bucket is public
   # bucket is not encrypted
   # bucket does not have access logs
   # bucket does not have versioning
-  bucket        = "${local.resource_prefix.value}-AWS-bucket"
+  bucket        = "${local.resource_prefix.value}-perth-bucket"
   acl           = "public-read"
   force_destroy = true
   tags = merge({
-    Name        = "${local.resource_prefix.value}-AWS-demo"
+    Name        = "${local.resource_prefix.value}-perth-demo"
     Environment = local.resource_prefix.value
     }, {
     git_org  = "davesc63"
@@ -93,4 +93,3 @@ resource "aws_s3_bucket" "awsdemo" {
     yor_trace = ""
   })
 }
-
