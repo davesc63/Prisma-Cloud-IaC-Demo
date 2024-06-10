@@ -6,8 +6,8 @@ resource "aws_s3_bucket" "perthdemo" {
     Environment = local.resource_prefix.value
     }, {
     git_org  = "davesc63"
-    git_repo = "Prisma-Cloud-IaC-Demo1"
-    customer = "Perth-IaC-Demo"
+    git_repo = "Prisma-Cloud-IaC-Demo"
+    customer = "Perth-IaC-Demo1-update-11062024"
     }, {
     yor_trace = "522dc9a4-AAAA-BBBB-CCCC-7b94b4c5d3bf"
   })
