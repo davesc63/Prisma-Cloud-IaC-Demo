@@ -24,5 +24,6 @@ resource "aws_security_group" "drift-sg" {
     git_repo  = "Prisma-Cloud-IaC-Demo"
     customer  = "Demo-Customer-Name-Here"
     yor_trace = "522dc9a4-6666-7777-9bdb-7b94b4c5d3bf"
+    usecase = "drift"
   }
 }
